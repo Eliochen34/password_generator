@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  console.log('random password is:', generatePassword(req.body))
+  const options = req.body
   const password = generatePassword(req.body)
-  res.render('index', { password: password })
+  res.render('index', { password: password, options: options })
 })
 
 app.listen(port, () => {
